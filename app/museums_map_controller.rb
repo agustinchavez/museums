@@ -1,0 +1,3 @@
+class MuseumsMapController < UIViewController
+
+end
