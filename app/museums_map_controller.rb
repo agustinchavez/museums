@@ -12,4 +12,10 @@ class MuseumsMapController < UIViewController
       self.view.addAnnotation(museum)
     end
   end
+
+  def mapView(mapView, viewForAnnotation:museum)
+    view = MKPinAnnotationView.alloc.initWithAnnotation(brewery, reuseIdentifier:ViewIdentifier)
+    button = UIButton.buttonWithType(UIButtonTypeDetailDisclosure)
+    view.rightCalloutAccessoryView = button
+  end
 end
