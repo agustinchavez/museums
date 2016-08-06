@@ -36,7 +36,7 @@ class MuseumsMapController < UIViewController
   private
 
   def museumDetailsController
-    MuseumDetailsController.alloc.init
+    @museumsDetailsController ||= MuseumDetailsController.alloc.init
   end
 
 end

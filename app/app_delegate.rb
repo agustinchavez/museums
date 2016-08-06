@@ -4,9 +4,13 @@ class AppDelegate
     rootViewController.title = 'museums'
     rootViewController.view.backgroundColor = UIColor.whiteColor
     museumsMapController = MuseumsMapController.alloc.init
-
     museumsListController = MuseumsListController.alloc.init
-    navigationController = UINavigationController.alloc.initWithRootViewController(museumsListController)
+
+    tabBarController = UITabBarController.alloc.init
+    tabBarController.viewControllers = [museumsMapController, museumsListController]
+
+
+    navigationController = UINavigationController.alloc.initWithRootViewController(tabBarController)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.rootViewController = navigationController
     @window.makeKeyAndVisible
