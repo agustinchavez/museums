@@ -14,6 +14,10 @@ class MuseumsMapController < UIViewController
     end
   end
 
+  def viewWillAppear(animated)
+    navigationController.setNavigationBarHidden(true, animated:true)
+  end
+
   def mapView(mapView, viewForAnnotation:museum)
     view = MKPinAnnotationView.alloc.initWithAnnotation(brewery, reuseIdentifier:ViewIdentifier)
     button = UIButton.buttonWithType(UIButtonTypeDetailDisclosure)
@@ -32,7 +36,7 @@ class MuseumsMapController < UIViewController
   private
 
   def museumDetailsController
-    museumDetailsController.alloc.init
+    MuseumDetailsController.alloc.init
   end
 
 end
