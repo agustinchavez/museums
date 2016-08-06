@@ -1,6 +1,11 @@
 class MuseumsListController < UITableViewController
   CELLID = 'CellId'
 
+  def init
+    self.tabBarItem = UITabBarItem.alloc.initWithTitle('List', image:UIImage.imageNamed('list.png'), tag:2)
+    self
+  end
+
   def viewDidLoad
     view.dataSource = view.delegate = self
   end
