@@ -5,12 +5,16 @@ class Museum
     @coordinate = CLLocationCoordinate2D.new
     @coordinate.latitude = latitude
     @coordinate.longitude = longitude
+    @url = NSURL.alloc.initWithString(url)
   end
 
   def title
     @name
   end
 
+  def url
+    @url
+  end
 
   def coordinate
     @coordinate
