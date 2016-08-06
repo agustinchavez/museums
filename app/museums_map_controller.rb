@@ -8,7 +8,8 @@ class MuseumsMapController < UIViewController
     region = MKCoordinateRegionMake(coordinates,MKCoordinateSpanMake(3.1, 3.1))
     self.view.setRegion(region)
 
-    museum = Museum.new('Field Museum', 41.8663, 87.6170)
-    self.view.addAnnotation(museum)
+    Museum.all.each do |museum|
+      self.view.addAnnotation(museum)
+    end
   end
 end
